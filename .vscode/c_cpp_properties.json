@@ -1,0 +1,50 @@
+{
+  "configurations": [
+    {
+      "name": "Mac",
+      "includePath": ["${default}"],
+      "defines": [],
+      "macFrameworkPath": [
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+      ],
+      "compilerPath": "/opt/local/bin/clang",
+      "compilerArgs": ["-g"],
+      "cStandard": "gnu11",
+      "cppStandard": "gnu++14",
+      "browse": {
+        "path": [
+          "/opt/local/include",
+          "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
+        ]
+      }
+    },
+    {
+      "name": "Linux",
+      "includePath": ["${default}"],
+      "defines": ["XDG_ROOT"],
+      "compilerPath": "/usr/bin/gcc",
+      "compilerArgs": ["-ggdb"],
+      "cStandard": "gnu11",
+      "cppStandard": "gnu++14"
+    },
+    {
+      "name": "devkitPro aarch64 (Nintendo Switch)",
+      "compilerPath": "${env:DEVKITPRO}/devkitA64/bin/aarch64-none-elf-g++",
+      "includePath": [
+        "${default}",
+        "${env:DEVKITPRO}/portlibs/switch/include",
+        "${env:DEVKITPRO}/libnx/include"
+      ],
+      "intelliSenseMode": "gcc-arm64",
+      "cStandard": "gnu11",
+      "cppStandard": "gnu++11",
+      "defines": [
+        "__SWITCH__",
+        "LIBRW",
+        "RW_GL3",
+        "AUDIO_OAL"
+      ]
+    }
+  ],
+  "version": 4
+}
