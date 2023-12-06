@@ -1,11 +1,11 @@
-<img src="https://github.com/lakomoor/reGTA/blob/reVC/res/images/logo_1024.png?raw=true" alt="reVC logo" width="200">
+<img src="https://github.com/lakomoor/reGTA/blob/revc/res/images/logo_1024.png?raw=true" alt="revc logo" width="200">
 
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FLakoMoor/%2Fre3%2Fbadge%3Fref%3Dmiami&style=flat)](https://actions-badge.atrox.dev/LakoMoor/reGTA/goto?ref=miami)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FLakoMoor/%2Fre3%2Fbadge%3Fref%3Drevc&style=flat)](https://actions-badge.atrox.dev/LakoMoor/reGTA/goto?ref=revc)
 <a href="https://discord.gg/RFNbjsUMGg"><img src="https://img.shields.io/badge/discord-join-7289DA.svg?logo=discord&longCache=true&style=flat" /></a>
 
 ## Intro
 
-In this repository you'll find the fully reversed source code for GTA III ([master](https://github.com/LakoMoor/reGTA/tree/master/) branch) and GTA VC ([miami](https://github.com/LakoMoor/reGTA/tree/miami/) branch).
+In this repository you'll find the fully reversed source code for GTA III ([master](https://github.com/LakoMoor/reGTA/tree/master/) branch) and GTA VC ([revc](https://github.com/LakoMoor/reGTA/tree/revc/) branch).
 
 It has been tested and works on Windows, Linux, MacOS and FreeBSD, on x86, amd64, arm and arm64.\
 Rendering is handled either by original RenderWare (D3D8)
@@ -16,14 +16,14 @@ We cannot build for PS2 or Xbox yet. If you're interested in doing so, get in to
 
 ## Installation
 
-- reVC requires game assets to work, so you **must** own [a copy of GTA Vice City](https://store.steampowered.com/app/12110/Grand_Theft_Auto_Vice_City/).
-- Build reVC or download the latest build:
-  - [Windows D3D9 MSS 32bit](https://nightly.link/LakoMoor/reGTA/workflows/reVC_msvc_x86/miami/reVC_Release_win-x86-librw_d3d9-mss.zip)
-  - [Windows D3D9 64bit](https://nightly.link/LakoMoor/reGTA/workflows/reVC_msvc_amd64/miami/reVC_Release_win-amd64-librw_d3d9-oal.zip)
-  - [Windows OpenGL 64bit](https://nightly.link/LakoMoor/reGTA/workflows/reVC_msvc_amd64/miami/reVC_Release_win-amd64-librw_gl3_glfw-oal.zip)
-  - [Linux 64bit](https://nightly.link/LakoMoor/reGTA/workflows/build-cmake-conan/miami/ubuntu-18.04-gl3.zip)
-  - [MacOS 64bit x86-64](https://nightly.link/LakoMoor/reGTA/workflows/build-cmake-conan/miami/macos-latest-gl3.zip)
-- Extract the downloaded zip over your GTA VC directory and run reVC. The zip includes the binary, updated and additional gamefiles and in case of OpenAL the required dlls.
+- revc requires game assets to work, so you **must** own [a copy of GTA Vice City](https://store.steampowered.com/app/12110/Grand_Theft_Auto_Vice_City/).
+- Build revc or download the latest build:
+  - [Windows D3D9 MSS 32bit](https://nightly.link/LakoMoor/reGTA/workflows/revc_msvc_x86/revc/revc_Release_win-x86-librw_d3d9-mss.zip)
+  - [Windows D3D9 64bit](https://nightly.link/LakoMoor/reGTA/workflows/revc_msvc_amd64/revc/revc_Release_win-amd64-librw_d3d9-oal.zip)
+  - [Windows OpenGL 64bit](https://nightly.link/LakoMoor/reGTA/workflows/revc_msvc_amd64/revc/revc_Release_win-amd64-librw_gl3_glfw-oal.zip)
+  - [Linux 64bit](https://nightly.link/LakoMoor/reGTA/workflows/build-cmake-conan/revc/ubuntu-18.04-gl3.zip)
+  - [MacOS 64bit x86-64](https://nightly.link/LakoMoor/reGTA/workflows/build-cmake-conan/revc/macos-latest-gl3.zip)
+- Extract the downloaded zip over your GTA VC directory and run revc. The zip includes the binary, updated and additional gamefiles and in case of OpenAL the required dlls.
 
 ## Screenshots
 
@@ -40,7 +40,7 @@ Some of them can be toggled at runtime, some cannot.
 
 * Fixed a lot of smaller and bigger bugs
 * User files (saves and settings) stored in GTA root directory
-* Settings stored in reVC.ini file instead of gta_vc.set
+* Settings stored in revc.ini file instead of gta_vc.set
 * Debug menu to do and change various things (Ctrl-M to open)
 * Debug camera (Ctrl-B to toggle)
 * Rotatable camera
@@ -87,7 +87,7 @@ Sorry for the inconvenience.
 
 When using premake, you may want to point GTA_VC_RE_DIR environment variable to GTA Vice City root folder if you want the executable to be moved there via post-build script.
 
-Clone the repository with `git clone --recursive -b miami https://github.com/LakoMoor/reGTA.git reVC`. Then `cd reVC` into the cloned repository.
+Clone the repository with `git clone --recursive -b revc https://github.com/LakoMoor/reGTA.git revc`. Then `cd revc` into the cloned repository.
 
 <details><summary>Linux Premake</summary>
 
@@ -102,7 +102,7 @@ Install python and conan, and then run build.
 conan export vendor/librw librw/master@
 mkdir build
 cd build
-conan install .. reVC/master@ -if build -o reVC:audio=openal -o librw:platform=gl3 -o librw:gl3_gfxlib=glfw --build missing -s reVC:build_type=RelWithDebInfo -s librw:build_type=RelWithDebInfo
+conan install .. revc/master@ -if build -o revc:audio=openal -o librw:platform=gl3 -o librw:gl3_gfxlib=glfw --build missing -s revc:build_type=RelWithDebInfo -s librw:build_type=RelWithDebInfo
 conan build .. -if build -bf build -pf package
 ```
 </details>
@@ -123,7 +123,7 @@ For FreeBSD using premake, proceed: [Building on FreeBSD](https://github.com/Lak
 
 Assuming you have Visual Studio 2015/2017/2019:
 - Run one of the `premake-vsXXXX.cmd` variants on root folder.
-- Open build/reVC.sln with Visual Studio and compile the solution.
+- Open build/revc.sln with Visual Studio and compile the solution.
     
 Microsoft recently discontinued its downloads of the DX9 SDK. You can download an archived version here: https://archive.org/details/dxsdk_jun10
 
@@ -132,11 +132,11 @@ Microsoft recently discontinued its downloads of the DX9 SDK. You can download a
 
 > :information_source: premake has an `--with-lto` option if you want the project to be compiled with Link Time Optimization.
 
-> :information_source: There are various settings in [config.h](https://github.com/LakoMoor/reGTA/tree/miami/src/core/config.h), you may want to take a look there.
+> :information_source: There are various settings in [config.h](https://github.com/LakoMoor/reGTA/tree/revc/src/core/config.h), you may want to take a look there.
 
-> :information_source: reVC uses completely homebrew RenderWare-replacement rendering engine; [librw](https://github.com/aap/librw/). librw comes as submodule of re3, but you also can use LIBRW enviorenment variable to specify path to your own librw.
+> :information_source: revc uses completely homebrew RenderWare-replacement rendering engine; [librw](https://github.com/aap/librw/). librw comes as submodule of re3, but you also can use LIBRW enviorenment variable to specify path to your own librw.
 
-If you feel the need, you can also use CodeWarrior 7 to compile reVC using the supplied codewarrior/reVC.mcp project - this requires the original RW34 libraries, and the DX8 SDK. The build is unstable compared to the MSVC builds though, and is mostly meant to serve as a reference.
+If you feel the need, you can also use CodeWarrior 7 to compile revc using the supplied codewarrior/revc.mcp project - this requires the original RW34 libraries, and the DX8 SDK. The build is unstable compared to the MSVC builds though, and is mostly meant to serve as a reference.
 
 ## Contributing
 As long as it's not linux/cross-platform skeleton/compatibility layer, all of the code on the repo that's not behind a preprocessor condition(like FIX_BUGS) are **completely** reversed code from original binaries.  
@@ -180,9 +180,9 @@ everybody had a lot of time to work on re3 again and
 we finally got a standalone exe in April 2020 (around 180k lines by then).
 
 After the initial excitement and fixing and polishing the code further,
-reVC was started in early May 2020 by starting from re3 code,
+revc was started in early May 2020 by starting from re3 code,
 not by starting from scratch replacing functions with a dll.
-After a few months of mostly steady progress we considered reVC
+After a few months of mostly steady progress we considered revc
 finished in December.
 
 Since then we have started reLCS, which is currently work in progress.
