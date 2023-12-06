@@ -192,5 +192,5 @@ Since then we have started reLCS, which is currently work in progress.
 
 We don't feel like we're in a position to give this code a license.\
 The code should only be used for educational, documentation and modding purposes.\
-We do not encourage piracy or commercial use.\
+We do not encourage piracy or commercial use. \
 Please keep derivate work open source and give proper credit.
